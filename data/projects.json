@@ -1,0 +1,10 @@
+[
+  {
+    "id": "my-first-project",
+    "name": "My first project",
+    "description": "Replace this entry with your own project: edit data/projects.json, then restart the app.",
+    "status": "active",
+    "startDate": "2026-11-17",
+    "endDate": "2026-12-31"
+  }
+]

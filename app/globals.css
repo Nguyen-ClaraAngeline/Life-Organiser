@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Linen background with tiny toadstool-red and moss-green polka dots */
+  body {
+    @apply bg-cream-100 font-body text-bark-800 antialiased;
+    background-image:
+      radial-gradient(circle at 18px 18px, rgb(204 70 54 / 0.07) 3px, transparent 3.5px),
+      radial-gradient(circle at 58px 58px, rgb(94 128 73 / 0.09) 3px, transparent 3.5px);
+    background-size: 80px 80px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-cap-200 text-bark-900;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-cap-400 ring-offset-2 ring-offset-cream-50;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-3xl border-2 border-bark-100 bg-cream-50 p-5 shadow-cozy;
+  }
+
+  .card-title {
+    @apply font-display text-xl font-semibold text-bark-700;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-moss-500 text-cream-50 shadow-[0_3px_0_theme(colors.moss.700)] hover:bg-moss-600;
+  }
+  .btn-red {
+    @apply btn bg-cap-500 text-cream-50 shadow-[0_3px_0_theme(colors.cap.700)] hover:bg-cap-600;
+  }
+  .btn-soft {
+    @apply btn border-2 border-bark-200 bg-cream-50 text-bark-700 hover:bg-bark-50;
+  }
+  .btn-ghost {
+    @apply btn px-3 py-1.5 text-bark-500 hover:bg-bark-100;
+  }
+  .btn-danger {
+    @apply btn border-2 border-cap-200 bg-cap-50 text-cap-600 hover:bg-cap-100;
+  }
+
+  /* Form fields */
+  .input {
+    @apply w-full rounded-2xl border-2 border-bark-100 bg-cream-50 px-4 py-2.5 text-bark-800 placeholder:text-bark-300 focus:border-moss-400 focus:outline-none focus:ring-2 focus:ring-moss-200;
+  }
+  .label {
+    @apply mb-1 block text-sm font-bold text-bark-600;
+  }
+
+  /* Filter chips */
+  .chip {
+    @apply rounded-full border-2 border-bark-100 bg-cream-50 px-3.5 py-1 text-sm font-bold text-bark-500 transition hover:border-moss-300;
+  }
+  .chip-active {
+    @apply border-moss-500 bg-moss-500 text-cream-50 hover:border-moss-500;
+  }
+
+  /* Progress bar fills with a subtle candy-stripe */
+  .bar-moss {
+    background-color: theme("colors.moss.500");
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgb(255 255 255 / 0.18) 0 8px,
+      transparent 8px 16px
+    );
+  }
+  .bar-cap {
+    background-color: theme("colors.cap.500");
+    background-image: repeating-linear-gradient(
+      45deg,
+      rgb(255 255 255 / 0.18) 0 8px,
+      transparent 8px 16px
+    );
+  }
+
+  /* Red gingham picnic-cloth strip */
+  .gingham {
+    background-color: #fff8ee;
+    background-image:
+      linear-gradient(90deg, rgb(204 70 54 / 0.22) 50%, transparent 50%),
+      linear-gradient(rgb(204 70 54 / 0.22) 50%, transparent 50%);
+    background-size: 24px 24px;
+  }
+  .gingham-green {
+    background-color: #fbf8ee;
+    background-image:
+      linear-gradient(90deg, rgb(94 128 73 / 0.25) 50%, transparent 50%),
+      linear-gradient(rgb(94 128 73 / 0.25) 50%, transparent 50%);
+    background-size: 24px 24px;
+  }
+
+  /* Toadstool polka dots for banners */
+  .polka-cap {
+    background-color: theme("colors.cap.500");
+    background-image: radial-gradient(#fffbf2 5px, transparent 5.5px);
+    background-size: 36px 36px;
+  }
+}
